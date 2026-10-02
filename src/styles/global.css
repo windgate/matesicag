@@ -1,0 +1,192 @@
+/* Matesic Appraisal Group — global styles */
+:root {
+  --navy: #1f3a5f;
+  --navy-dark: #16293f;
+  --gold: #a98a3f;
+  --gold-light: #c7ab6a;
+  --ink: #2b2b2b;
+  --paper: #faf9f6;
+  --paper-alt: #f0ede6;
+  --line: #ddd8cc;
+  --serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); }
+h3 { font-size: 1.25rem; }
+
+a { color: var(--navy); }
+a:hover { color: var(--gold); }
+
+img { max-width: 100%; height: auto; }
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.65rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--gold); color: #fff; }
+
+/* Hero */
+.hero {
+  background: url('/images/mag-hero.jpg') center 60% / cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: calc(5rem + 75px) 1.25rem calc(4.5rem + 75px);
+}
+.hero h1,
+.hero .uspap,
+.hero .footnote {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85), 0 0 18px rgba(0, 0, 0, 0.6);
+}
+.hero h1 { color: #fff; margin: 0 0 1rem; }
+.hero .uspap {
+  max-width: 46rem;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: #f3f0e8;
+}
+.hero .footnote {
+  font-size: 0.85rem;
+  color: #e3e7ed;
+  margin-top: 0.75rem;
+}
+.hero img.hero-logo {
+  width: 180px;
+  margin-bottom: 1.5rem;
+}
+
+/* Service cards */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 3rem 0;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 2rem;
+}
+.card h2 { margin-top: 0; }
+.card .name { font-weight: 700; font-size: 1.15rem; }
+.card .creds { font-style: italic; color: #555; margin: 0.25rem 0 1rem; }
+.card .contact-line { margin: 0.35rem 0; }
+
+/* Credential strip */
+.credentials {
+  background: var(--navy);
+  padding: 2rem 0;
+}
+.credentials .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.credentials img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1) opacity(0.85);
+  transition: filter 0.2s;
+}
+.credentials img:hover { filter: brightness(0) invert(1) opacity(1); }
+
+/* Bio sections */
+.bio {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.bio:last-of-type { border-bottom: none; }
+.bio img.portrait { border-radius: 6px; width: 100%; }
+.bio .affiliate {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+}
+.bio .affiliate img { max-width: 150px; display: block; margin-top: 0.5rem; }
+@media (max-width: 700px) {
+  .bio { grid-template-columns: 1fr; }
+  .bio img.portrait { max-width: 280px; }
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem 0;
+}
+@media (max-width: 700px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin: 1rem 0 0.25rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  background: #fff;
+}
+.contact-form textarea { min-height: 140px; resize: vertical; }
+.contact-form .btn { margin-top: 1.25rem; }
+.contact-info h2 { margin-top: 0; }
+.contact-info .person { margin-bottom: 1.5rem; }
+.contact-info .person .name { font-weight: 700; }
+
+/* Page title band */
+.page-title {
+  background: var(--navy);
+  color: #fff;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+.page-title h1 { color: #fff; margin: 0; }

@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Contact"
+  description="Contact Matesic Appraisal Group in Dallas, Texas for personal property and motor vehicle appraisals. Reach Carol or Gary Matesic directly, or send a message."
+>
+  <section class="page-title">
+    <h1>Contact Us</h1>
+  </section>
+
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Reach out to us for your appraisal needs.</h2>
+        <div class="person">
+          <p class="name">Carol Matesic — Personal Property</p>
+          <p>
+            <a href="tel:214-244-0903">214-244-0903</a><br />
+            <a href="mailto:carol@matesicag.com">carol@matesicag.com</a>
+          </p>
+        </div>
+        <div class="person">
+          <p class="name">Gary Matesic — Motor Vehicles</p>
+          <p>
+            <a href="tel:214-704-3352">214-704-3352</a><br />
+            <a href="mailto:gary@matesicag.com">gary@matesicag.com</a>
+          </p>
+        </div>
+        <div class="person">
+          <p class="name">Mailing Address</p>
+          <p>
+            Matesic Appraisal Group<br />
+            P.O. Box 12824<br />
+            Dallas, TX 75225-0824
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Send us a message.</h2>
+        <form
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thank-you"
+        >
+          <p hidden>
+            <label>Don&rsquo;t fill this out: <input name="bot-field" /></label>
+          </p>
+          <input type="hidden" name="form-name" value="contact" />
+          <label for="name">Name *</label>
+          <input id="name" name="name" type="text" required autocomplete="name" />
+          <label for="email">Email address *</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+          <label for="message">Your message *</label>
+          <textarea id="message" name="message" required></textarea>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

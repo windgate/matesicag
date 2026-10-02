@@ -1,0 +1,49 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="/images/mag-logo.png" alt="Matesic Appraisal Group logo" width="120" height="120" />
+    </div>
+    <div class="footer-info">
+      <p class="org">Matesic Appraisal Group</p>
+      <p>P.O. Box 12824<br />Dallas, TX 75225-0824</p>
+      <p>
+        <a href="tel:214-244-0903">214-244-0903</a><br />
+        <a href="mailto:carol@matesicag.com">carol@matesicag.com</a>
+      </p>
+      <a class="btn" href="/contact">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <p>&copy; {year} Matesic Appraisal Group, LLC. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--navy-dark);
+    color: #d8dce3;
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+  .footer-brand img { max-width: 120px; }
+  .org { font-weight: 700; color: #fff; font-size: 1.1rem; margin-top: 0; }
+  .footer-info a { color: #e8e4d8; }
+  .footer-info a.btn { color: #fff; background: var(--gold); margin-top: 0.5rem; }
+  .footer-info a.btn:hover { background: var(--gold-light); }
+  .footer-legal {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 1rem 1.25rem;
+  }
+  .footer-legal p { margin: 0; }
+</style>
